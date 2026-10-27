@@ -9,6 +9,9 @@
 
 ---
 
+<img width="662" height="509" alt="Screenshot 2026-10-26 at 9 45 34 PM" src="https://github.com/user-attachments/assets/89f9c843-cf45-4751-a9d5-8f8454b850cc" />
+
+
 # Transport Phenomena
 Rate Laws For Diffusive Transport
 
