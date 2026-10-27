@@ -778,7 +778,10 @@ Q = \dfrac{\kappa A \varepsilon}{\mu L}(\mathcal{P}_1 - \mathcal{P}_2)
 **Effective packing particle diameter**
 
 ```math
-D_p = \dfrac{6}{a_v} = \dfrac{6 V}{A} \\ D_{p, \text{spheres}} = D
+\begin{gathered}
+D_p = \dfrac{6}{a_v} = \dfrac{6 V}{A} \\
+D_{p, \text{spheres}} = D
+\end{gathered}
 ```
 
 **Bed Reynolds number**
@@ -1336,7 +1339,10 @@ v_z = \bar{v}_z + v_z'
 **Time-smoothed continuity equation**
 
 ```math
-\nabla\cdot\boldsymbol{\bar{v}} = 0 \\ \nabla\cdot\boldsymbol{v}' = 0
+\begin{gathered}
+\nabla\cdot\boldsymbol{\bar{v}} = 0 \\
+\nabla\cdot\boldsymbol{v}' = 0
+\end{gathered}
 ```
 
 **Time-smoothed equation of motion ($\tau$-form)**
@@ -1531,7 +1537,10 @@ v_r = v_\theta = 0
 **Plug flow - uniform velocity across cross section**
 
 ```math
-\langle v \rangle = v = \mathrm{constant} \\ v_z = v_z(z)
+\begin{gathered}
+\langle v \rangle = v = \mathrm{constant} \\
+v_z = v_z(z)
+\end{gathered}
 ```
 
 **Inviscid flow**
@@ -1729,19 +1738,28 @@ f = 0.0014 + \dfrac{0.125}{\mathrm{Re}^{0.32}}\qquad \mathrm{Re} \in [10^4, 10^7
 **Pipes of general roughness (Haaland)**
 
 ```math
-\dfrac{1}{\sqrt{f}} = -3.6\log_{10} \left[\dfrac{6.9}{\mathrm{Re}} + \left(\dfrac{k/D}{3.7}\right)^{10/9}\right]\qquad \mathrm{Re} \in [4\times 10^4, 10^7] \\ k/D < 0.05
+\begin{gathered}
+\dfrac{1}{\sqrt{f}} = -3.6\log_{10} \left[\dfrac{6.9}{\mathrm{Re}} + \left(\dfrac{k/D}{3.7}\right)^{10/9}\right]\qquad \mathrm{Re} \in [4\times 10^4, 10^7] \\
+k/D < 0.05
+\end{gathered}
 ```
 
 **Commercial standard piping (Drew)**
 
 ```math
-f = 0.0014 + \dfrac{0.090}{\mathrm{Re}^{0.27}}\qquad \mathrm{Re} \in [10^4, 10^7] \\ k/D \approx 0.00015
+\begin{gathered}
+f = 0.0014 + \dfrac{0.090}{\mathrm{Re}^{0.27}}\qquad \mathrm{Re} \in [10^4, 10^7] \\
+k/D \approx 0.00015
+\end{gathered}
 ```
 
 **Full rough conduit**
 
 ```math
-\dfrac{1}{\sqrt{f}} = 2.28 - 4.0 \log_{10} \left(\dfrac{k}{D}\right)\qquad \mathrm{Re} > 10^4 \\ k/D > 0.01
+\begin{gathered}
+\dfrac{1}{\sqrt{f}} = 2.28 - 4.0 \log_{10} \left(\dfrac{k}{D}\right)\qquad \mathrm{Re} > 10^4 \\
+k/D > 0.01
+\end{gathered}
 ```
 
 Kinetic head correction factor
@@ -1859,7 +1877,10 @@ G_0 = \rho v_0 = \dfrac{\dot{m}}{A}
 **Ergun equation  ★ $\mathrm{Re_{bed}} \in [10, 1000]$**
 
 ```math
-\left[ \dfrac{(\mathcal{P}_0 - \mathcal{P}_L)\rho}{G_0^2} \right] \dfrac{D_p}{L}\dfrac{\varepsilon^3}{1-\varepsilon} = 150 \left[ \dfrac{1-\varepsilon}{\frac{D_p G_0}{\mu}} \right] + \dfrac{7}{4} \\ \left[ \dfrac{(\mathcal{P}_0 - \mathcal{P}_L)\rho}{G_0^2} \right] \dfrac{D_p}{L}\dfrac{\varepsilon^3}{1-\varepsilon} = 150 \dfrac{1}{\mathrm{Re_{bed}}} + \dfrac{7}{4}
+\begin{gathered}
+\left[ \dfrac{(\mathcal{P}_0 - \mathcal{P}_L)\rho}{G_0^2} \right] \dfrac{D_p}{L}\dfrac{\varepsilon^3}{1-\varepsilon} = 150 \left[ \dfrac{1-\varepsilon}{\frac{D_p G_0}{\mu}} \right] + \dfrac{7}{4} \\
+\left[ \dfrac{(\mathcal{P}_0 - \mathcal{P}_L)\rho}{G_0^2} \right] \dfrac{D_p}{L}\dfrac{\varepsilon^3}{1-\varepsilon} = 150 \dfrac{1}{\mathrm{Re_{bed}}} + \dfrac{7}{4}
+\end{gathered}
 ```
 
 ## Cavitation and vortex motion
@@ -1911,7 +1932,10 @@ h = \dfrac{C^2}{2g} \dfrac{1}{r^2}
 **Mean free path**
 
 ```math
-\lambda = \dfrac{1}{\sqrt{2}\pi d^2 n} \\ \lambda(\mathrm{\mu m}) \approx 3.1\times 10^{-3} \dfrac{T(\mathrm{K})}{\sigma^2(\mathrm{\mathring{A}^2}) p(\mathrm{atm})}
+\begin{gathered}
+\lambda = \dfrac{1}{\sqrt{2}\pi d^2 n} \\
+\lambda(\mathrm{\mu m}) \approx 3.1\times 10^{-3} \dfrac{T(\mathrm{K})}{\sigma^2(\mathrm{\mathring{A}^2}) p(\mathrm{atm})}
+\end{gathered}
 ```
 
 **Knudsen number**
@@ -2163,7 +2187,10 @@ K_i = \dfrac{H_i}{P}
 **Fick’s first law  Molecular diffusion flux of species A**
 
 ```math
-\begin{aligned} J_{A} &= -cD_{AB}\dfrac{dx_A}{dx} \\ &= -D_{AB} \dfrac{dc_A}{dz} \end{aligned}  \\ j_{A} = -\rho D_{AB}\dfrac{dw_A}{dz}
+\begin{gathered}
+\begin{aligned} J_{A} &= -cD_{AB}\dfrac{dx_A}{dx} \\ &= -D_{AB} \dfrac{dc_A}{dz} \end{aligned} \\
+j_{A} = -\rho D_{AB}\dfrac{dw_A}{dz}
+\end{gathered}
 ```
 
 **Bulk flow flux**
@@ -2302,14 +2329,14 @@ J_A = x_B N = - J_B
 N_A = -\dfrac{cD_{AB}}{(1 - x_A)_{\mathrm{LM}}} \dfrac{\Delta x_A}{z} = \dfrac{\rho_A}{\mathcal{M}_A}\dfrac{dz}{dt}
 ```
 
-## Diffusivity
+---
 
-*Context:* Diffusivity of gas mixtures
+## Diffusivity of gas mixtures
 
-**Fuller-Schettler-Giddings correlation  ★ Low pressure (0 - 10 atm)  ★ $D_{AB} \ [\mathrm{cm^2/s}]$  ★ $P \ [\mathrm{atm}], T \ [\mathrm{K}]$  ★ $\mathcal{M}_{AB} \ [\mathrm{g/mol}]$**
+**Fuller-Schettler-Giddings correlation  * Low pressure (0 - 10 atm) *  $D_{AB} \ [\mathrm{cm^2/s}]$ *  $P \ [\mathrm{atm}], T \ [\mathrm{K}]$  * $\mathcal{M}_{AB} \ [\mathrm{g/mol}]$**
 
 ```math
-D_{AB} = D_{BA} = \dfrac{0.00143 T^{1.75}}{P \mathcal{M}_{AB}^{1/2} \left[(\sum_V)_A^{1/3} + (\sum_V)_B^{1/3}\right]^2} \\
+D_{AB} = D_{BA} = \dfrac{0.00143 T^{1.75}}{P \mathcal{M}_{AB}^{1/2} \left[(\sum_V)_A^{1/3} + (\sum_V)_B^{1/3}\right]^2}
 ```
 
 **Effective molecular mass**
@@ -2324,7 +2351,7 @@ D_{AB} = D_{BA} = \dfrac{0.00143 T^{1.75}}{P \mathcal{M}_{AB}^{1/2} \left[(\sum_
 \sum_V
 ```
 
-**Takahashi correlation  ★ High pressure (Figure 3.3)**
+**Takahashi correlation  * High pressure (Figure 3.3)**
 
 ```math
 \dfrac{D_{AB} P}{(D_{AB}P)_{\text{low }P}} = \mathrm{const}
@@ -2333,18 +2360,21 @@ D_{AB} = D_{BA} = \dfrac{0.00143 T^{1.75}}{P \mathcal{M}_{AB}^{1/2} \left[(\sum_
 **Molar averaged reduced properties**
 
 ```math
-T_r = x_A T_{r, A} + x_B T_{r, B} \\ P_r = x_A P_{r, A} + x_B P_{r, B}
+\begin{gathered}
+T_r = x_A T_{r, A} + x_B T_{r, B} \\
+P_r = x_A P_{r, A} + x_B P_{r, B}
+\end{gathered}
 ```
 
 ## Diffusivity of nonelectrolyte liquid mixtures
 
-**Stoke-Einstein equation  ★ Infinite dilution**
+**Stokes-Einstein equation  * Infinite dilution**
 
 ```math
 (D_{AB})_\infty = \dfrac{RT}{6\pi \mu_B R_A N_A} \propto \dfrac{T}{\mu_B R_A}
 ```
 
-**Wilke-Chang equation  ★ Low pressure (0 - 10 atm)  ★ $D_{AB} \ [\mathrm{cm^2/s}]$  ★ $\mu_B \ [\mathrm{cP}], T \ [\mathrm{K}]$  ★ $\mathcal{M}_{AB} \ [\mathrm{g/mol}]$  ★ $v_A \ [\mathrm{cm^3/mol}]$**
+**Wilke-Chang equation  * Low pressure (0 - 10 atm)  * $D_{AB} \ [\mathrm{cm^2/s}]$  * $\mu_B \ [\mathrm{cP}], T \ [\mathrm{K}]$  * $\mathcal{M}_{AB} \ [\mathrm{g/mol}]$  * $v_A \ [\mathrm{cm^3/mol}]$**
 
 ```math
 (D_{AB})_\infty = 7.4\times 10^{-8} \dfrac{(\phi_B \mathcal{M}_B)^{1/2}T}{\mu_B v_A^{0.6}}
@@ -2353,7 +2383,10 @@ T_r = x_A T_{r, A} + x_B T_{r, B} \\ P_r = x_A P_{r, A} + x_B P_{r, B}
 **Hayduk-Minhas correlation  (Modified Wilke-Chang equation)**
 
 ```math
-(D_{AB})_\infty = 13/3\times 10^{-8} \dfrac{T^{1.47}\mu_B^\varepsilon}{v_A^{0.71}} \\ \varepsilon = \dfrac{10.2}{v_A} - 0.791
+\begin{gathered}
+(D_{AB})_\infty = 13.3\times 10^{-8} \dfrac{T^{1.47}\mu_B^\varepsilon}{v_A^{0.71}} \\
+\varepsilon = \dfrac{10.2}{v_A} - 0.791
+\end{gathered}
 ```
 
 ## Film theory for mass transfer at fluid-fluid interface
@@ -2378,10 +2411,13 @@ k_c = \dfrac{D_{AB}}{\delta}
 k'_c = \dfrac{D_{AB}}{\delta (1 - x_A)_{\mathrm{LM}}}
 ```
 
-**Molar flux of species A  ★ Interface (i), bulk (b)**
+**Molar flux of species A — interface (i), bulk (b)**
 
 ```math
-N_A = \pm k_c (c_{A, i} - c_{A, b}) \\ N_A = \pm k'_c (c_{A, i} - c_{A, b})
+\begin{gathered}
+N_A = \pm k_c (c_{A, i} - c_{A, b}) \\
+N_A = \pm k'_c (c_{A, i} - c_{A, b})
+\end{gathered}
 ```
 
 **Film thickness**
@@ -2390,7 +2426,7 @@ N_A = \pm k_c (c_{A, i} - c_{A, b}) \\ N_A = \pm k'_c (c_{A, i} - c_{A, b})
 \delta = \dfrac{D_{AB}}{k_c} = \dfrac{D_{AB}}{k'_c (1 - x_A)_{\mathrm{LM}}}
 ```
 
-Mass transfer coefficient and driving force
+### Mass-transfer coefficients and driving forces
 
 **Concentration (liquid)**
 
@@ -2410,7 +2446,7 @@ k_p \ [\mathrm{mol/m^2 \cdot s \cdot Pa}]\qquad N_A = \pm k_p (P_{A, i} - P_{A, 
 k_x \ [\mathrm{mol/m^2 \cdot s}]\qquad N_A = \pm k_x (x_{A, i} - x_{A, b})
 ```
 
-## Mole fraction (vapor)
+### Mole fraction (vapor)
 
 *Context:* $k_y \ [\mathrm{mol/m^2 \cdot s}]$; $N_A = \pm k_y (y_{A, i} - y_{A, b})$
 
@@ -2438,7 +2474,7 @@ k' = \dfrac{k}{(1 - x_A)_{\mathrm{LM}}}
 k' = \dfrac{k}{(1 - y_A)_{\mathrm{LM}}}
 ```
 
-Two-film theory
+### Two-film theory
 
 - **Based on** — Overall Mass Transfer Coefficient; Equations; Fictitious properties
 
@@ -2494,14 +2530,14 @@ x_i = y_i
 y_H = \left[\dfrac{(V/F) - 1}{(V/F)}\right] x_H + \left[\dfrac{1}{(V/F)}\right] z_H
 ```
 
-Rachford-Rice algorithm for isothermal flash calculation
+### Rachford–Rice algorithm for isothermal flash calculation
 
-Symbol Conventions
+**Symbol conventions**
 
 - **Molar flow rates**  
   $F$ - Feed  $V$ - Output vapor  $L$ - Output liquid
 
-## Molar fraction of component i
+### Mole fractions of component i
 
 *Context:* $x_i$ - In the liquid; $y_i$ - In the vapor; $z_i$ - Overall
 
@@ -2523,7 +2559,7 @@ f(\Psi) = \displaystyle\sum_i \dfrac{z_i (1 - K_i)}{[1 + \Psi(K_i - 1)]} = 0
 **Derivative of objective function**
 
 ```math
-f'(\Psi) = \displaystyle\sum_i \dfrac{z_i (1 - K_i)^2}{[1 + \Psi(K_i - 1)]^2}
+f'(\Psi) = \displaystyle\sum_i \dfrac{z_i (K_i - 1)^2}{[1 + \Psi(K_i - 1)]^2}
 ```
 
 **Newton’s method for root finding**
@@ -2544,13 +2580,13 @@ V = \Psi F
 L = F - V
 ```
 
-**Vapor mole fraction**
+**Liquid mole fraction**
 
 ```math
 x_i = \dfrac{z_i}{1 + \Psi(K_i - 1)}
 ```
 
-**Liquid mole fraction**
+**Vapor mole fraction**
 
 ```math
 y_i = \dfrac{z_i K_i}{1 + \Psi(K_i - 1)}
@@ -2566,21 +2602,29 @@ Q = h_V V + h_L L - h_F F
 
 *Context:* Flash operations of flash vaporization and partial condensation. (Separation Process Principles with Applications Using Process Simulators 4e by Seader p93, Figures 4.8, 4.9.)
 
-**Bubble point**
+**Bubble point (ideal mixture, Raoult’s law)**
 
 ```math
-\Psi = 0 \\ \sum z_i K_i = 1 \\ \sum \dfrac{y_i}{P_i^* (T)} = \dfrac{1}{P}
+\begin{gathered}
+\Psi = 0 \\
+\sum z_i K_i = 1 \\
+\sum_i x_i P_i^*(T) = P
+\end{gathered}
 ```
 
-**Dew point**
+**Dew point (ideal mixture, Raoult’s law)**
 
 ```math
-\Psi = 1 \\ \sum \dfrac{z_i}{K_i} = 1 \\ \sum x_i P_i^* (T) = P
+\begin{gathered}
+\Psi = 1 \\
+\sum \dfrac{z_i}{K_i} = 1 \\
+\sum_i \dfrac{y_i}{P_i^*(T)} = \dfrac{1}{P}
+\end{gathered}
 ```
 
-Ternary liquid-liquid extraction
+## Ternary liquid–liquid extraction
 
-Symbol Conventions
+**Symbol conventions**
 
 - **Components**  
   $A$ - Carrier (feed solvent)  $B$ - Solute  $C$ - Solvent
@@ -2591,7 +2635,7 @@ Symbol Conventions
 - **Mass fraction of component i**  
   $x_i$ - In the liquid  $y_i$ - In the vapor  $z_i$ - Overall
 
-## Mass ratio of component i
+### Mass ratio of component i
 
 *Context:* $X_i$ - In the liquid; $Y_i$ - In the vapor
 
@@ -2610,7 +2654,10 @@ X_i = \dfrac{m_i}{m - m_i}
 **Conversion between mass fraction and ratio**
 
 ```math
-X_i = \dfrac{x_i}{1 - x_i} \\ x_i = \dfrac{X_i}{1 - X_i}
+\begin{gathered}
+X_i = \dfrac{x_i}{1 - x_i} \\
+x_i = \dfrac{X_i}{1 + X_i}
+\end{gathered}
 ```
 
 **Solute balance  ★ Solvent A, Solute B  ★ Feed F, Solvent S, Extract E, Raffinate R**
@@ -2684,9 +2731,11 @@ Liquid-liquid extraction of ternary mixture. (Separation Process Principles with
 \begin{cases} \dfrac{X_{\infty, B}}{X_{F, B}} = 0, & \mathcal{E} \in [1, \infty) \\ \dfrac{X_{\infty, B}}{X_{F, B}} = 1 - \mathcal{E}, & \mathcal{E} \in (-\infty, 1) \end{cases}
 ```
 
-- **Multistage arrangements of cocurrent, crosscurrent, and countercurrent. (Separation Process Principles with Applications Using Process Simulators 4e by Seader p120, Figures 5.4.)** — Absorption and Stripping; Graphical method for trayed towers
+## Absorption and stripping — graphical design
 
-Symbol Conventions
+Multistage arrangements: cocurrent, crosscurrent and countercurrent (Seader, 4th ed., Fig. 5.4).
+
+**Symbol conventions**
 
 - **Molar flow rates**  
   $L$ - Total liquid feed  $V$ - Total gas feed  $L'$ - solute-free absorbent - constant at each stage  $V'$ - solute-free gas (carrier gas) - constant at each stage
@@ -2822,9 +2871,11 @@ N_{OG} = \displaystyle\int_{y_{\text{out}}}^{y_{\text{in}}}\dfrac{dy}{y - y^*}
 K_y a
 ```
 
-- **Distillation of Binary Mixtures** — McCabe-Thiele graphical method for trayed towers
+## Distillation of binary mixtures
 
-Symbol Conventions
+McCabe–Thiele graphical method for trayed towers.
+
+**Symbol conventions**
 
 - **Molar flow rates**  
   $F$ - Feed  $D$ - Distillate  $B$ - Bottoms  $L$ - Liquid in the rectifying section, Reflux  $V$ - Vapor in the rectifying section  $\overline{L}$ - Liquid in the stripping section  $\overline{V}$ - Vapor in the stripping section, Boilup
@@ -2832,7 +2883,7 @@ Symbol Conventions
 - **Mole fraction of the light key component**  
   $x$ - In the liquid  $y$ - In the vapor  $x_D$ - In the distillate  $x_B$ - In the bottoms
 
-## Ratio
+### Ratios and assumptions
 
 *Context:* $\alpha_{1, 2}$ - Relative volatility; $R$ - Reflux ratio; $V_B$ - Boilup ratio
 
@@ -2842,19 +2893,28 @@ Symbol Conventions
 **Constant molar overflow in rectifying section**
 
 ```math
-L_1 = L_i = L \\ V_1 = V_i = V
+\begin{gathered}
+L_1 = L_i = L \\
+V_1 = V_i = V
+\end{gathered}
 ```
 
 **Constant molar overflow in stripping section**
 
 ```math
-\overline{L}_1 = \overline{L}_i = \overline{L} \\ \overline{V}_1 = \overline{V}_i = \overline{V}
+\begin{gathered}
+\overline{L}_1 = \overline{L}_i = \overline{L} \\
+\overline{V}_1 = \overline{V}_i = \overline{V}
+\end{gathered}
 ```
 
 **Non-equal flow rate in rectifying and stripping sections**
 
 ```math
-L \neq \overline{L} \\ V \neq \overline{V}
+\begin{gathered}
+L \neq \overline{L} \\
+V \neq \overline{V}
+\end{gathered}
 ```
 
 **Reflux ratio**
@@ -2902,27 +2962,39 @@ q = \dfrac{\overline{L} - L}{F} = 1 + \dfrac{\overline{V} - V}{F}
 **$q$-line**
 
 ```math
-y = \left(\dfrac{q}{q - 1}\right)x + \left(\dfrac{z_F}{q - 1}\right)
+y = \left(\dfrac{q}{q - 1}\right)x - \left(\dfrac{z_F}{q - 1}\right)
 ```
 
 ## Limiting conditions
 
-**Total reflux  (Useless)**
+**Total reflux — theoretical limiting case**
 
 ```math
-R_\infty = \infty \\ N_{\min} = 0 \\ L = V \\ D = B = 0
+\begin{gathered}
+R_\infty = \infty \\
+N_{\min} = \text{finite minimum theoretical stage count} \\
+L = V \\
+D = B = 0
+\end{gathered}
 ```
 
 **Minimum reflux**
 
 ```math
-R_{\min} = \dfrac{(L/V)_{\min}}{1 - (L/V)_{\min}} \\ N_\infty = \infty \\ V_{B, \min} = \dfrac{1}{(\overline{L}/\overline{V})_{\min} - 1}
+\begin{gathered}
+R_{\min} = \dfrac{(L/V)_{\min}}{1 - (L/V)_{\min}} \\
+N_\infty = \infty \\
+V_{B, \min} = \dfrac{1}{(\overline{L}/\overline{V})_{\min} - 1}
+\end{gathered}
 ```
 
 **Perfect separation**
 
 ```math
-x_D = 1, \quad x_B = 0 \\ R \ge R_{\min}  \begin{cases} R_{\min} = \dfrac{1}{z_F (\alpha_{1, 2} - 1)} & q = 1 \\ R_{\min} = \dfrac{\alpha_{1, 2}}{z_F (\alpha_{1, 2} - 1)} - 1 & q = 0 \end{cases}
+\begin{gathered}
+x_D = 1, \quad x_B = 0 \\
+R \ge R_{\min}  \begin{cases} R_{\min} = \dfrac{1}{z_F (\alpha_{1, 2} - 1)} & q = 1 \\ R_{\min} = \dfrac{\alpha_{1, 2}}{z_F (\alpha_{1, 2} - 1)} - 1 & q = 0 \end{cases}
+\end{gathered}
 ```
 
 ## Membrane Separations
@@ -2990,7 +3062,7 @@ n = \dfrac{n_\text{total}}{A_c} = \dfrac{\text{total \# of pores}}{\text{membran
 **Bulk flow flux  ★ Straight cylindrical pore**
 
 ```math
-\begin{aligned}N &= v\rho\varepsilon \\ &= \dfrac{\varepsilon\rho D^2}{32 \mu l_M} (P_0 - P_L) \\ &= \dfrac{n\pi\rho D^4}{128 v l_M}(P_0 - P_L)\end{aligned}
+\begin{aligned}N &= v\rho\varepsilon \\ &= \dfrac{\varepsilon\rho D^2}{32 \mu l_M} (P_0 - P_L) \\ &= \dfrac{n\pi\rho D^4}{128 \mu l_M}(P_0 - P_L)\end{aligned}
 ```
 
 **Empirical hydraulic diameter**
@@ -3040,7 +3112,10 @@ D_P = \dfrac{6}{a_v}
 **Concentration driving force**
 
 ```math
-\Delta c \neq 0 \\ \Delta P = 0
+\begin{gathered}
+\Delta c \neq 0 \\
+\Delta P = 0
+\end{gathered}
 ```
 
 **Transmembrane mass flux**
@@ -3084,7 +3159,7 @@ D_{e, i} = \dfrac{\varepsilon}{\tau} \left[\dfrac{1}{(1/D_i) + (1/D_{K, i})}\rig
 **Knudsen diffusivity of straight cylindrical pore  ★ Kinetic theory of gas**
 
 ```math
-D_{K, i} \ [\mathrm{cm/s}] = 4850 d_p \ [\mathrm{cm}] \sqrt{\dfrac{T}{\mathcal{M}_i}\dfrac{[\mathrm{K}]}{[\mathrm{g/mol}]}}
+D_{K, i} \ [\mathrm{cm^2/s}] = 4850 d_p \ [\mathrm{cm}] \sqrt{\dfrac{T}{\mathcal{M}_i}\dfrac{[\mathrm{K}]}{[\mathrm{g/mol}]}}
 ```
 
 **Selectivity of Knudsen diffusion  ★ $D_i \gg D_{K, i}$  ★ $D_{e, i} \sim D_{K, i}$**
@@ -3103,19 +3178,19 @@ S_{i, j} = \dfrac{P_{M, i}}{P_{M, j}} = \sqrt{\dfrac{\mathcal{M}_j}{\mathcal{M}_
 K_i = \dfrac{c_i}{c_i'}
 ```
 
-**Transmembrance mass flux  ★ Fick’s law**
+**Transmembrane mass flux  ★ Fick’s law**
 
 ```math
 N_i = \dfrac{D_i}{l_M}(c_{i, 0} - c_{i, L})
 ```
 
-**Transmembrance mass flux  ★ $K_{i, 0} = K_{i, L} = K_{i}$**
+**Transmembrane mass flux  ★ $K_{i, 0} = K_{i, L} = K_{i}$**
 
 ```math
 N_i = \dfrac{K_i D_i}{l_M}(c'_{i, 0} - c'_{i, L})
 ```
 
-**Transmembrance mass flux  ★ No mass transfer resistance in fluid boundary layers  ★ $c'_{i, 0} = c_{i, F}$ and $c'_{i, L} = c_{i, P}$**
+**Transmembrane mass flux  ★ No mass transfer resistance in fluid boundary layers  ★ $c'_{i, 0} = c_{i, F}$ and $c'_{i, L} = c_{i, P}$**
 
 ```math
 N_i = \dfrac{K_i D_i}{l_M}(c_{i, F} - c_{i, P})
@@ -3129,19 +3204,19 @@ N_i = \dfrac{K_i D_i}{l_M}(c_{i, F} - c_{i, P})
 H_i = \dfrac{c_i}{P_i}
 ```
 
-**Transmembrance mass flux  ★ Fick’s law**
+**Transmembrane mass flux  ★ Fick’s law**
 
 ```math
 N_i = \dfrac{D_i}{l_M}(c_{i, 0} - c_{i, L})
 ```
 
-**Transmembrance mass flux  ★ $H_{i, 0} = H_{i, L} = H_{i}$**
+**Transmembrane mass flux  ★ $H_{i, 0} = H_{i, L} = H_{i}$**
 
 ```math
 N_i = \dfrac{H_i D_i}{l_M}(P_{i, 0} - P_{i, L})
 ```
 
-**Transmembrance mass flux  ★ No mass transfer resistance in external boundary layers  ★ $P_{i, 0} = P_{i, F}$ and $P_{i, L} = P_{i, P}$**
+**Transmembrane mass flux  ★ No mass transfer resistance in external boundary layers  ★ $P_{i, 0} = P_{i, F}$ and $P_{i, L} = P_{i, P}$**
 
 ```math
 N_i = \dfrac{H_i D_i}{l_M}(P_{i, F} - P_{i, P})
@@ -3167,7 +3242,7 @@ N_i = \dfrac{H_i D_i}{l_M}(P_{i, F} - P_{i, P})
 \theta = \dfrac{\dot{n}_P}{\dot{n}_F}
 ```
 
-Summary of transport through membranes
+### Summary of transport through membranes
 
 - **Type of transport** — Permselective; Membrane Type; Driving Force; Permeability
 
@@ -3232,7 +3307,10 @@ P_1 - P_{\mathrm{H_2O}} > \Pi
 **Seawater as solution 1; salt as solute B**
 
 ```math
-\mathrm{A} = \text{water} = \mathrm{H_2O} \\ \mathrm{B} = \text{salt} = \mathrm{S}
+\begin{gathered}
+\mathrm{A} = \text{water} = \mathrm{H_2O} \\
+\mathrm{B} = \text{salt} = \mathrm{S}
+\end{gathered}
 ```
 
 **Molar mass**
