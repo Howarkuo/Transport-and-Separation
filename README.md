@@ -4,9 +4,397 @@
 
 ## Contents
 
+- DemoCase
 - [Transport Phenomena](#transport-phenomena)
 - [Fluid Mechanics](#fluid-mechanics)
 - [Separation Processes](#separation-processes)
+
+# Transport and Separation — Chemical Vapor Deposition (CVD)
+
+> **Application:** Semiconductor thin-film deposition  
+> **Core subjects:** Momentum transport, mass transport, interfacial reaction, and coupled transport–reaction  
+> **Related course:** MATSCI 123 — Electronic Materials Processing
+
+<img width="766" height="485" alt="Screenshot 2026-10-28 at 2 48 16 PM" src="https://github.com/user-attachments/assets/2ec04719-27e8-4cce-bfc2-e3fd04c3c7a2" />
+
+
+## Overview: How CVD connects to transport phenomena
+
+Chemical vapor deposition (CVD) forms a solid film through chemical reactions of gaseous precursors near or on a substrate. The steps are:
+
+1. **Bulk convection:** Carrier gas delivers reactants through the reactor.
+2. **Boundary-layer transport:** Reactants cross the near-wall concentration boundary layer.
+3. **Adsorption and surface reaction:** Reactants react at the substrate.
+4. **Film incorporation:** Solid reaction products form a thin film.
+5. **Product removal:** Volatile byproducts diffuse and convect away.
+
+The deposition rate may be controlled by gas-phase supply, surface kinetics, or both. This example is especially relevant to **momentum and mass transfer** within a Transport and Separation course; surface chemistry provides the coupled reaction boundary condition.
+
+| Course topic | Key equation | Application to CVD |
+| --- | --- | --- |
+| Momentum transport | $Re_x=\rho v_\infty x/\mu$ | Predict flow regime and boundary-layer growth |
+| Mass transport | $J_A=-D_{AB}\,dC_A/dy$ | Estimate precursor diffusion toward the wafer |
+| Interfacial reaction kinetics | $r_s=k_s C_s$ | Relate surface consumption to surface concentration |
+| Coupled transport–reaction | $J=\dfrac{k_s h_g}{k_s+h_g}C_g$ | Estimate net deposition flux with two serial resistances |
+
+---
+
+## 1. Momentum Transport — Carrier-Gas Flow and Hydrodynamic Boundary Layers
+
+### 1.1 Reynolds number
+
+For flow past a flat substrate,
+
+$$
+\boxed{Re_x=\frac{\rho v_\infty x}{\mu}}
+$$
+
+where:
+
+| Symbol | Meaning | SI units |
+| --- | --- | --- |
+| $Re_x$ | Local Reynolds number | Dimensionless |
+| $\rho$ | Gas density | kg/m³ |
+| $v_\infty$ | Free-stream carrier-gas velocity | m/s |
+| $x$ | Distance from leading edge | m |
+| $\mu$ or $\eta$ | Dynamic viscosity | Pa·s |
+
+The Reynolds number compares inertial effects with viscous effects. The following boundary-layer relations assume **steady, approximately two-dimensional laminar external flow over a flat plate** with roughly constant properties and negligible pressure gradient. Reactor geometry can require different correlations.
+
+### 1.2 Local hydrodynamic boundary-layer thickness
+
+A common engineering approximation is
+
+$$
+\boxed{\delta(x)\approx\frac{5x}{\sqrt{Re_x}}}
+$$
+
+Substituting the local Reynolds number,
+
+$$
+\delta(x)=\frac{5x}{\sqrt{\rho v_\infty x/\mu}}
+=\boxed{5\sqrt{\frac{\mu x}{\rho v_\infty}}}.
+$$
+
+**Interpretation:** $\delta\propto\sqrt{x}$, so the velocity boundary layer grows downstream.
+
+### 1.3 Average boundary-layer thickness
+
+For a substrate of length $L$,
+
+$$
+\overline{\delta}=\frac{1}{L}\int_0^L\delta(x)\,dx.
+$$
+
+Substitute the local thickness:
+
+$$
+\begin{aligned}
+\overline{\delta}
+&=\frac{5}{L}\sqrt{\frac{\mu}{\rho v_\infty}}\int_0^L x^{1/2}\,dx\\
+&=\frac{5}{L}\sqrt{\frac{\mu}{\rho v_\infty}}\left[\frac{2}{3}x^{3/2}\right]_0^L\\
+&=\boxed{\frac{10}{3}\sqrt{\frac{\mu L}{\rho v_\infty}}}.
+\end{aligned}
+$$
+
+Using $Re_L=\rho v_\infty L/\mu$,
+
+$$
+\boxed{\overline{\delta}=\frac{10L}{3\sqrt{Re_L}}=\frac{2}{3}\delta(L)}.
+$$
+
+### 1.4 Effect of carrier-gas flow rate
+
+At fixed gas properties and geometry,
+
+$$
+\overline{\delta}\propto v_\infty^{-1/2}.
+$$
+
+Because the reactor volumetric flow rate is $Q=v_\infty A$ for a fixed flow cross section $A$,
+
+$$
+\boxed{\overline{\delta}\propto Q^{-1/2}}.
+$$
+
+**Example — doubling carrier-gas flow:**
+
+$$
+\frac{\overline{\delta}_2}{\overline{\delta}_1}
+=\sqrt{\frac{Q_1}{Q_2}}
+=\frac{1}{\sqrt 2}\approx0.707.
+$$
+
+The average hydrodynamic boundary layer becomes about **29.3% thinner**, provided the flow remains in the assumed regime.
+
+### 1.5 Effect of reactor pressure
+
+For an ideal gas at fixed temperature, composition, and free-stream velocity, with viscosity approximately independent of pressure,
+
+$$
+\rho=\frac{P\overline M}{RT}\propto P,
+\qquad
+\boxed{\delta\propto P^{-1/2}}.
+$$
+
+Thus a lower pressure can produce a **thicker velocity boundary layer** under these particular conditions. This does not by itself imply weaker species transport; gas-phase molecular diffusivity also changes with pressure. If mass-flow rate or reactor operating conditions are held fixed instead of velocity, the scaling must be re-evaluated.
+
+---
+
+## 2. Mass Transport — Precursor Diffusion to the Wafer
+
+### 2.1 Fick's first law
+
+For one-dimensional diffusion of dilute precursor A through carrier gas B,
+
+$$
+\boxed{J_A=-D_{AB}\frac{dC_A}{dy}}
+$$
+
+where $J_A$ denotes the **diffusive molar flux relative to the molar-average gas motion** (mol/(m²·s)), $D_{AB}$ is diffusivity (m²/s), and $C_A$ is molar concentration (mol/m³). The negative sign indicates diffusion from high concentration to low concentration.
+
+The total precursor molar flux may also include convection. Here the boundary-layer model uses an effective **gas-side mass-transfer coefficient** to summarize the species transport.
+
+### 2.2 Concentration and partial pressure
+
+For an ideal gas,
+
+$$
+\boxed{C_A=\frac{P_A}{RT}},
+$$
+
+with $P_A$ in Pa, $R$ in J/(mol·K), and $T$ in K.
+
+For an approximately linear concentration profile across an effective **mass-transfer thickness** $\delta_m$,
+
+$$
+\boxed{J_A\approx\frac{D_{AB}}{RT\delta_m}(P_{A,b}-P_{A,s})}.
+$$
+
+Subscripts $b$ and $s$ refer to the bulk gas and substrate surface, respectively.
+
+### 2.3 Gas-side mass-transfer coefficient
+
+Define $h_g$ by
+
+$$
+\boxed{J_g=h_g(C_g-C_s)},
+\qquad
+\boxed{h_g\approx\frac{D_{AB}}{\delta_m}}.
+$$
+
+| Symbol | Physical meaning | SI units |
+| --- | --- | --- |
+| $J_g$ | Gas-side precursor transport flux | mol/(m²·s) |
+| $h_g$ | Gas-side mass-transfer coefficient | m/s |
+| $C_g$ | Bulk precursor concentration | mol/m³ |
+| $C_s$ | Surface precursor concentration | mol/m³ |
+| $\delta_m$ | Effective concentration boundary-layer thickness | m |
+| $D_{AB}$ | Binary gas diffusivity | m²/s |
+
+**Important distinction:** The velocity boundary-layer thickness $\delta$ is not necessarily equal to the concentration boundary-layer thickness $\delta_m$. Their relationship depends on fluid properties and on $Sc=\mu/(\rho D_{AB})$, the **Schmidt number**. For quantitative calculations, use appropriate Sherwood-number correlations, $Sh=h_g L/D_{AB}=f(Re,Sc)$.
+
+### 2.4 Pressure and gas diffusivity
+
+For ordinary binary molecular diffusion of gases, a useful approximate scaling is
+
+$$
+\boxed{D_{AB}\propto\frac{T^n}{P}},\qquad n\approx1.5\text{–}2.
+$$
+
+If, additionally, the *effective mass-transfer thickness* scales approximately like the hydrodynamic thickness under a particular model, then
+
+$$
+\frac{D_{AB}}{\delta_m}\propto\frac{P^{-1}}{P^{-1/2}}=P^{-1/2},
+$$
+
+so
+
+$$
+\boxed{J_A\propto P^{-1/2}(P_{A,b}-P_{A,s})}.
+$$
+
+This is a **conditional scaling**, not a universal LPCVD rule. It presumes fixed temperature, gas velocity, and **partial-pressure difference**. At fixed precursor mole fractions, the partial-pressure difference usually changes with total pressure. In addition, a rigorous mass-transfer correlation can give a different pressure exponent.
+
+---
+
+## 3. Surface Reaction Kinetics — The Interface Boundary Condition
+
+Surface reactions consume precursors arriving at the wafer. For a simplified first-order surface reaction,
+
+$$
+\boxed{r_s=k_s C_s},
+$$
+
+where $r_s$ is mol/(m²·s), $C_s$ is mol/m³, and $k_s$ is m/s. The reaction rate constant often has an Arrhenius form:
+
+$$
+\boxed{k_s=k_0\exp\left(-\frac{E_a}{RT_s}\right)}.
+$$
+
+Here $E_a$ is activation energy (J/mol), $T_s$ is substrate temperature (K), and $k_0$ is the pre-exponential factor (m/s).
+
+Thermodynamics determines whether a reaction is favorable, while kinetics determines its rate:
+
+$$
+\Delta_r G^\circ=\sum_i\nu_i\Delta_f G_i^\circ,
+\qquad
+\boxed{\Delta_r G=\Delta_r G^\circ+RT\ln Q_{\mathrm{rxn}}}.
+$$
+
+A negative $\Delta_r G$ indicates thermodynamic favorability in the forward direction under the stated conditions, **not** a guarantee of rapid deposition. $Q_{\mathrm{rxn}}$ here is the reaction quotient, not the volumetric flow rate used in Section 1.
+
+---
+
+## 4. Coupled Mass Transport and Surface Reaction — CVD Rate Control
+
+### 4.1 Flux continuity at steady state
+
+Assume steady-state transport without gas-phase loss of the precursor inside the boundary layer, and a first-order surface reaction:
+
+$$
+J_g=h_g(C_g-C_s),
+\qquad
+J_s=k_sC_s,
+\qquad
+J_g=J_s=J.
+$$
+
+Solve for the surface concentration:
+
+$$
+\begin{aligned}
+h_g(C_g-C_s)&=k_sC_s\\
+h_gC_g&=(h_g+k_s)C_s\\
+\boxed{C_s=\frac{h_g}{h_g+k_s}C_g}.&
+\end{aligned}
+$$
+
+Substitute into the reaction flux:
+
+$$
+\boxed{J=\frac{k_sh_g}{k_s+h_g}C_g}.
+$$
+
+Define the overall coefficient $k_{\mathrm{overall}}$:
+
+$$
+J=k_{\mathrm{overall}}C_g,
+\qquad
+\boxed{\frac{1}{k_{\mathrm{overall}}}=\frac{1}{k_s}+\frac{1}{h_g}}.
+$$
+
+This is a **resistances-in-series model**: the surface-reaction and gas-phase mass-transfer resistances add. The smaller rate coefficient produces the larger resistance.
+
+### 4.2 Limiting regimes
+
+| Control regime | Criterion | Approximate flux | Physical meaning |
+| --- | --- | --- | --- |
+| Surface-reaction-limited | $k_s\ll h_g$ | $J\approx k_sC_g$ | Reactant supply is relatively fast; surface conversion is slow |
+| Mass-transfer-limited | $k_s\gg h_g$ | $J\approx h_gC_g$ | Surface conversion is fast; arrival through the gas boundary layer is slow |
+| Mixed control | $k_s\sim h_g$ | Full expression required | Both resistances contribute |
+
+A useful dimensionless competition parameter is
+
+$$
+\boxed{Da_s=\frac{k_s}{h_g}}.
+$$
+
+This is a **surface Damköhler-type ratio**. For $Da_s\ll1$, surface kinetics limits; for $Da_s\gg1$, mass transfer limits.
+
+The normalized deposition flux is
+
+$$
+\boxed{\frac{J}{h_gC_g}=\frac{Da_s}{1+Da_s}}.
+$$
+
+At $Da_s=1$, the flux equals $0.5h_gC_g$ and the two resistances contribute equally.
+
+### 4.3 Temperature dependence and semilog growth-rate plots
+
+In the reaction-limited regime, if $C_g$ is approximately constant,
+
+$$
+J\approx k_0C_g\exp\left(-\frac{E_a}{RT_s}\right),
+$$
+
+so
+
+$$
+\boxed{\ln J\approx\ln(k_0C_g)-\frac{E_a}{R}\frac{1}{T_s}}.
+$$
+
+On a graph of $\ln J$ versus $1/T_s$, the slope is approximately $-E_a/R$ in the reaction-limited regime. If the vertical axis uses $\log_{10}$ instead, the slope becomes $-E_a/(2.303R)$.
+
+At higher temperatures, surface reaction may become so fast that transport begins to control the rate, producing a weaker temperature dependence. Different precursors (for example, SiH₄ and SiCl₄) can show different kinetic behavior.
+
+### 4.4 APCVD and LPCVD: Why uniformity can differ
+
+- **APCVD (atmospheric-pressure CVD):** Depending on kinetics and geometry, a fast surface reaction can deplete precursor near the wafer, making deposition sensitive to gas flow and upstream consumption.
+- **LPCVD (low-pressure CVD):** Lower pressure usually increases molecular diffusivity. With a suitable choice of temperature, partial pressures, and residence time, surface-reaction-limited operation can improve across-wafer and wafer-to-wafer uniformity.
+
+**Caution:** Lower pressure alone does **not** guarantee better uniformity or reaction-limited deposition. Geometry, precursor chemistry, concentration, gas residence time, and temperature distribution all matter.
+
+---
+
+## 5. Worked Practice Problem — Carrier-Gas Flow and Boundary-Layer Thickness
+
+**Problem:** For laminar flow over a flat substrate of length $L$, the local boundary-layer thickness is $\delta(x)=5x/\sqrt{Re_x}$. (a) Derive its average thickness. (b) Determine how it changes if the carrier-gas volumetric flow rate doubles while gas properties and reactor geometry remain fixed.
+
+**(a) Average thickness**
+
+$$
+\begin{aligned}
+\overline\delta
+&=\frac{1}{L}\int_0^L\frac{5x}{\sqrt{\rho v_\infty x/\mu}}\,dx\\
+&=\frac{5}{L}\sqrt{\frac{\mu}{\rho v_\infty}}\int_0^L\sqrt{x}\,dx\\
+&=\boxed{\frac{10}{3}\sqrt{\frac{\mu L}{\rho v_\infty}}}
+=\boxed{\frac{10L}{3\sqrt{Re_L}}}.
+\end{aligned}
+$$
+
+**(b) Double the flow rate**
+
+Since $Q=v_\infty A$ and $A$ is fixed,
+
+$$
+\frac{\overline\delta_2}{\overline\delta_1}
+=\left(\frac{Q_2}{Q_1}\right)^{-1/2}
+=2^{-1/2}=0.707.
+$$
+
+**Answer:** The mean velocity boundary-layer thickness decreases by **29.3%**.
+
+**CVD connection:** A thinner *concentration* boundary layer often increases $h_g\approx D_{AB}/\delta_m$ and thus deposition flux under mass-transfer-limited conditions. But do not replace $\delta_m$ directly with the hydrodynamic $\delta$ without checking the mass-transfer model.
+
+---
+
+## 6. Quick Equation Sheet
+
+| Category | Equation | Use |
+| --- | --- | --- |
+| Reynolds number | $Re_x=\rho v_\infty x/\mu$ | Classify and scale near-wall flow |
+| Local velocity boundary layer | $\delta(x)\approx 5x/\sqrt{Re_x}$ | Thickness along a laminar flat plate |
+| Average velocity boundary layer | $\overline\delta=10L/(3\sqrt{Re_L})$ | Mean thickness over a substrate |
+| Carrier-gas flow scaling | $\overline\delta\propto Q^{-1/2}$ | Effect of changing flow at fixed properties |
+| Fick's law | $J_A=-D_{AB}\,dC_A/dy$ | Molecular diffusive flux |
+| Ideal-gas precursor concentration | $C_A=P_A/(RT)$ | Convert partial pressure to concentration |
+| Gas-phase mass transfer | $J_g=h_g(C_g-C_s)$ | Gas-side supply |
+| First-order surface reaction | $J_s=k_s C_s$ | Surface consumption |
+| Overall deposition flux | $J=k_sh_gC_g/(k_s+h_g)$ | Combined gas transfer and reaction |
+| Series resistances | $1/k_{\mathrm{overall}}=1/k_s+1/h_g$ | Identify controlling resistance |
+| Surface Damköhler ratio | $Da_s=k_s/h_g$ | Distinguish limiting regimes |
+| Arrhenius relation | $k_s=k_0e^{-E_a/(RT_s)}$ | Temperature-dependent surface kinetics |
+
+## 7. Transport-and-Separation Takeaways
+
+- **Momentum transport** determines the carrier-gas flow field and velocity boundary-layer development.
+- **Mass transport** determines how efficiently precursors move from the bulk gas to the substrate; diffusion and convection both matter.
+- **Surface reactions** supply a boundary condition that couples mass transfer to deposition kinetics.
+- **Uniform film thickness** requires considering transport, precursor depletion, reaction kinetics, reactor configuration, and operating pressure **together**.
+
+*Model scope: These equations describe an idealized flat-plate, dilute-precursor CVD model. Actual CVD reactors can involve multicomponent diffusion, gas-phase reactions, thermal gradients, complex geometries, and non-first-order surface kinetics.*
+
 
 ---
 
