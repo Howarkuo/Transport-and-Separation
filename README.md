@@ -337,6 +337,7 @@ At higher temperatures, surface reaction may become so fast that transport begin
 
 ---
 
+
 ## 5. Worked Practice Problem — Carrier-Gas Flow and Boundary-Layer Thickness
 
 **Problem:** For laminar flow over a flat substrate of length $L$, the local boundary-layer thickness is $\delta(x)=5x/\sqrt{Re_x}$. (a) Derive its average thickness. (b) Determine how it changes if the carrier-gas volumetric flow rate doubles while gas properties and reactor geometry remain fixed.
@@ -369,7 +370,243 @@ $$
 
 ---
 
-## 6. Quick Equation Sheet
+## 6. Worked Practice Problem 2 — Temperature Sensitivity and CVD Rate Control
+
+**Problem:** (a) Compare surface-reaction-controlled and diffusion-controlled CVD. (b) Assuming reaction-controlled Arrhenius kinetics with activation energy $E_a=1.0\ \mathrm{eV}$ per molecule, calculate the rate ratio when temperature increases from $700$ to $800\ \mathrm{K}$. (c) Explain why the deposition rate becomes less temperature-sensitive at high temperatures. Connect your answer to the previous boundary-layer problem.
+
+### (a) Surface-reaction-controlled versus diffusion-controlled CVD
+
+CVD requires precursor supply through the gas boundary layer **and** incorporation through a surface reaction. For steady-state, first-order kinetics:
+
+$$
+J_g=h_g(C_g-C_s),\qquad J_s=k_sC_s,\qquad J_g=J_s=J.
+$$
+
+Eliminating the surface concentration $C_s$ gives:
+
+$$
+\boxed{J=\frac{k_sh_g}{k_s+h_g}C_g}
+$$
+
+| Quantity | Surface-reaction-controlled | Diffusion (mass-transfer)-controlled |
+| --- | --- | --- |
+| Rate-limiting step | Surface reaction | Precursor delivery to the surface |
+| Condition | $k_s\ll h_g$ | $k_s\gg h_g$ |
+| Surface concentration | $C_s\approx C_g$ | $C_s\ll C_g$ |
+| Flux | $J\approx k_sC_g$ | $J\approx h_gC_g$ |
+| Sensitivity to temperature | Strong when $k_s$ is Arrhenius-controlled | Usually weaker, but not zero |
+| Sensitivity to flow / gas transfer | Relatively weak | Often stronger |
+
+**Units:** $J$ in $\mathrm{mol\,m^{-2}\,s^{-1}}$; $k_s$ and $h_g$ in $\mathrm{m\,s^{-1}}$; $C_g$ and $C_s$ in $\mathrm{mol\,m^{-3}}$.
+
+**Physical interpretation:** When surface reaction is slow, precursor arrives faster than it can react, so $C_s\approx C_g$. When surface reaction is fast, precursor is consumed almost as soon as it arrives, so transport becomes the bottleneck.
+
+### (b) Arrhenius rate increase from 700 K to 800 K
+
+Assume reaction-controlled deposition and constant bulk precursor concentration:
+
+$$
+R_{\mathrm{dep}}(T)=R_0\exp\!\left(-\frac{E_a}{k_BT}\right).
+$$
+
+Here $R_{\mathrm{dep}}$ is the deposition rate, **not** the universal gas constant; $k_B$ is Boltzmann's constant. Given:
+
+$$
+E_a=1.0\ \mathrm{eV},\qquad
+k_B=8.617\times10^{-5}\ \mathrm{eV\,K^{-1}}.
+$$
+
+Divide the rates to eliminate the unknown prefactor $R_0$:
+
+$$
+\begin{aligned}
+\frac{R_{\mathrm{dep}}(800)}{R_{\mathrm{dep}}(700)}
+&=\frac{R_0e^{-E_a/(k_B\cdot800)}}{R_0e^{-E_a/(k_B\cdot700)}}\\
+&=\exp\!\left[\frac{E_a}{k_B}\left(\frac{1}{700}-\frac{1}{800}\right)\right]\\
+&=\exp\!\left[\frac{1.0}{8.617\times10^{-5}}
+\left(\frac{1}{700}-\frac{1}{800}\right)\right]\\
+&\approx\boxed{7.94}.
+\end{aligned}
+$$
+
+**Answer:** Under these assumptions, increasing temperature from $700$ to $800\ \mathrm{K}$ raises the rate by approximately **7.94 times**. Higher temperature strongly increases the frequency of successful activated surface-reaction events.
+
+**Important condition:** This ratio assumes unchanged activation energy and prefactor, constant precursor concentration, and **reaction-controlled deposition throughout** $700$–$800\ \mathrm{K}$. If the process enters mixed or mass-transfer control, the actual ratio will generally be smaller.
+
+> **Unit convention:** $E_a/k_BT$ is dimensionless if $E_a$ is expressed per molecule (eV) and $k_B$ is in eV/K. If $E_a$ is instead in J/mol, use the molar gas constant $R=8.314\ \mathrm{J\,mol^{-1}\,K^{-1}}$.
+
+### (c) Why the deposition rate becomes less temperature-sensitive
+
+At relatively low temperatures, $k_s\ll h_g$:
+
+$$
+J\approx k_sC_g,\qquad k_s=k_0e^{-E_a/(RT)}.
+$$
+
+The reaction coefficient changes exponentially with temperature, producing a steep slope on an Arrhenius plot.
+
+As temperature rises, $k_s$ may increase until $k_s\gg h_g$:
+
+$$
+J\approx h_gC_g.
+$$
+
+Now faster surface chemistry cannot substantially increase deposition because the gas cannot replenish precursor quickly enough. **Mass-transfer control is not temperature independence:** diffusivity, gas properties, and precursor concentration can still vary with temperature.
+
+A useful dimensionless comparison is the **mass-transfer Damköhler ratio**:
+
+$$
+\boxed{Da_m=\frac{k_s}{h_g}}
+$$
+
+| $Da_m$ | Regime | Consequence |
+| --- | --- | --- |
+| $Da_m\ll 1$ | Reaction-controlled | Temperature strongly affects $J$ through $k_s$ |
+| $Da_m\approx 1$ | Mixed control | Both resistances contribute appreciably |
+| $Da_m\gg 1$ | Mass-transfer-controlled | Changes in $h_g$ and precursor supply dominate |
+
+**Series-resistance interpretation:** Defining $k_{\mathrm{overall}}=J/C_g$ gives
+
+$$
+\frac{1}{k_{\mathrm{overall}}}=\frac{1}{k_s}+\frac{1}{h_g},
+\qquad
+\frac{J}{h_g C_g}=\frac{Da_m}{1+Da_m}.
+$$
+
+At $Da_m=1$, surface-reaction and gas-transfer resistances are equal, so $J/(h_g C_g)=0.5$.
+
+**Connection to Practice Problem 1:** For fixed reactor geometry, gas properties, and laminar flow over a flat plate:
+
+$$
+\overline{\delta}_v\propto v_\infty^{-1/2}\propto Q^{-1/2}.
+$$
+
+Increasing carrier-gas flow reduces the **velocity** boundary-layer thickness. It can also increase mass transfer to the wafer, but the concentration boundary layer $\delta_m$ is not necessarily identical to the velocity boundary layer $\delta_v$; a suitable Sherwood-number correlation is needed for quantitative predictions.
+
+| Operating regime | Often effective lever | Why |
+| --- | --- | --- |
+| Reaction-controlled | Raise substrate temperature | Accelerates surface-reaction kinetics |
+| Mass-transfer-controlled | Improve precursor delivery, mixing, or reactor flow design | Increases available reactant supply and potentially $h_g$ |
+
+**Key lesson:** $T\uparrow\ \Rightarrow\ k_s\uparrow$ may move the process from reaction control to mixed control and eventually mass-transfer control; deposition rate then becomes **less sensitive to further temperature increases**.
+
+---
+
+## 7. Worked Practice Problem 3 — CVD Equilibrium Constants and Gibbs Free Energy
+
+**Problem:** (a) Construct the equilibrium constant for the forward CVD reaction, assuming pure solids have unit activity. (b) Use Hess's law and the supplied standard Gibbs energies at $1000\ \mathrm{K}$ to determine $\Delta_r G^\circ$. (c) Evaluate thermodynamic favorability. (d) Calculate the equilibrium constant using $R=1.99\ \mathrm{cal\,mol^{-1}\,K^{-1}}$.
+
+> **Source-data limitation:** The actual balanced target reaction and the two underlying thermochemical equations were not included in the supplied problem text. Their stoichiometric coefficients and phases must be checked against the original assignment before writing an exact species-specific equilibrium expression. The provided relation $\mathrm{Eq.\,1=Eq.\,2+3(Eq.\,3)}$ and the reported Gibbs-energy data are sufficient to solve parts (b)–(d).
+
+### (a) Construct the equilibrium constant correctly
+
+For a general balanced reaction
+
+$$
+\sum_i \nu_i A_i=0,
+$$
+
+where $\nu_i$ is positive for products and negative for reactants, the dimensionless thermodynamic equilibrium constant is
+
+$$
+\boxed{K=\prod_i a_i^{\nu_i}=\frac{\prod_{\rm products}a_i^{\nu_i}}{\prod_{\rm reactants}a_i^{-\nu_i}}}.
+$$
+
+- For a **pure solid**, $a_i=1$, so it does not appear explicitly in $K$. In particular, omit $\mathrm{Y_2O_3(s)}$ if it is a pure solid.
+- For an **ideal gas**, $a_i=p_i/p^\circ$; use **dimensionless pressure ratios** rather than bare dimensional concentrations. Under an ideal-gas standard-state convention, an equivalent concentration-based form uses $a_i=c_i/c^\circ$ with the appropriate standard state.
+- Whether $\mathrm{YCl_3}$ appears in $K$ depends on its **phase**. Omit it too if it is a pure solid; retain it if it is gaseous (with its applicable gas activity).
+
+**Transcription warning:** The supplied notation, `Kc = [CO]3 [Cl2]3[YCl3]2 [CO2]3`, lacks a clear fraction bar and the balanced reaction. It cannot unambiguously establish which terms belong in the numerator or denominator. Do **not** treat that text as a verified equilibrium expression; use the balanced equation to construct $K$.
+
+### (b) Calculate $\Delta_r G^\circ$ using Hess's law
+
+For standard reaction Gibbs energies, reversing a reaction changes the sign of $\Delta_rG^\circ$; multiplying a reaction by $n$ multiplies $\Delta_rG^\circ$ by $n$; adding reactions adds their Gibbs energies.
+
+The supplied relationship is:
+
+$$
+\mathrm{Eq.\,1=Eq.\,2+3(Eq.\,3)}.
+$$
+
+Given at $1000\ \mathrm{K}$:
+
+$$
+\Delta_r G_2^\circ=-59.4\ \mathrm{kcal\,mol^{-1}},\qquad
+\Delta_r G_3^\circ=+46.7\ \mathrm{kcal\,mol^{-1}}.
+$$
+
+Hence,
+
+$$
+\begin{aligned}
+\Delta_r G_1^\circ
+&=\Delta_r G_2^\circ+3\Delta_r G_3^\circ\\
+&=-59.4+3(46.7)\\
+&=\boxed{+80.7\ \mathrm{kcal\,mol^{-1}}}.
+\end{aligned}
+$$
+
+The energy is **per mole of reaction as balanced** (often written simply $\mathrm{kcal/mol}$ in a homework solution).
+
+### (c) Is the forward reaction favorable?
+
+At standard-state activities,
+
+$$
+\Delta_r G=\Delta_r G^\circ+RT\ln Q,
+$$
+
+and $Q=1$ gives $\Delta_r G=\Delta_r G^\circ=+80.7\ \mathrm{kcal\,mol^{-1}}$.
+
+Therefore, the **forward reaction is not thermodynamically favorable under standard-state conditions at $1000\ \mathrm{K}$**. The reverse reaction is favored at standard state. **Important:** $\Delta_rG^\circ>0$ does **not** mean the forward reaction can never occur. Actual direction depends on the reaction quotient $Q$: the forward direction is favorable when $\Delta_rG<0$, equivalently $Q<K$.
+
+### (d) Calculate the numerical equilibrium constant
+
+At equilibrium $\Delta_rG=0$ and $Q=K$, so
+
+$$
+\boxed{\Delta_rG^\circ=-RT\ln K}
+$$
+
+Rearrange (note that $RT$ is in the **denominator** of the exponent):
+
+$$
+\boxed{K=\exp\!\left(-\frac{\Delta_rG^\circ}{RT}\right)}.
+$$
+
+Convert the given energy to calories so it matches the supplied gas constant:
+
+$$
+80.7\ \mathrm{kcal\,mol^{-1}}=80{,}700\ \mathrm{cal\,mol^{-1}}.
+$$
+
+At $T=1000\ \mathrm{K}$ and $R=1.99\ \mathrm{cal\,mol^{-1}\,K^{-1}}$:
+
+$$
+\begin{aligned}
+K&=\exp\!\left[-\frac{80{,}700}{(1.99)(1000)}\right]\\
+&=\exp(-40.55)\\
+&\approx\boxed{2.4\times10^{-18}}.
+\end{aligned}
+$$
+
+**Interpretation:** The very small equilibrium constant means equilibrium strongly favors the **reactants** for the forward reaction at the standard states and temperature specified. This describes **thermodynamic equilibrium**, not the kinetic deposition rate or the rate-controlling mechanism.
+
+### Connection to transport and reaction kinetics
+
+| Question | Governing relation | What it tells you |
+| --- | --- | --- |
+| Is the reaction thermodynamically favorable? | $\Delta_rG=\Delta_rG^\circ+RT\ln Q$ | Direction of spontaneous change at specified conditions |
+| Where does equilibrium lie? | $K=\exp[-\Delta_rG^\circ/(RT)]$ | Equilibrium product/reactant activities |
+| How fast does surface chemistry consume precursor? | $J_s=k_sC_s$ | Kinetic rate under a first-order model |
+| How fast is precursor delivered? | $J_g=h_g(C_g-C_s)$ | Gas-side transport rate |
+| What is the net steady-state deposition flux? | $J=k_sh_gC_g/(k_s+h_g)$ | Combined transport/reaction limit under the simplified irreversible model |
+
+**Model qualification:** A substantial reverse reaction or proximity to thermodynamic equilibrium requires a reversible surface-reaction model; the simplified irreversible, first-order series-resistance expression alone does not enforce the equilibrium constraint.
+
+---
+
+## 8. Quick Equation Sheet
 
 | Category | Equation | Use |
 | --- | --- | --- |
@@ -383,10 +620,13 @@ $$
 | First-order surface reaction | $J_s=k_s C_s$ | Surface consumption |
 | Overall deposition flux | $J=k_sh_gC_g/(k_s+h_g)$ | Combined gas transfer and reaction |
 | Series resistances | $1/k_{\mathrm{overall}}=1/k_s+1/h_g$ | Identify controlling resistance |
-| Surface Damköhler ratio | $Da_s=k_s/h_g$ | Distinguish limiting regimes |
+| Surface Damköhler ratio | $Da_m=k_s/h_g$ | Distinguish limiting regimes |
 | Arrhenius relation | $k_s=k_0e^{-E_a/(RT_s)}$ | Temperature-dependent surface kinetics |
+| Standard Gibbs energy and equilibrium | $\Delta_rG^\circ=-RT\ln K$ | Calculate equilibrium from standard reaction Gibbs energy |
+| Reaction Gibbs energy | $\Delta_rG=\Delta_rG^\circ+RT\ln Q$ | Test thermodynamic favorability at actual activities |
+| Arrhenius two-temperature ratio | $R_{\mathrm{dep}}(T_2)/R_{\mathrm{dep}}(T_1)=\exp[(E_a/k_B)(1/T_1-1/T_2)]$ | Reaction-controlled rate comparison using $E_a$ in eV |
 
-## 7. Transport-and-Separation Takeaways
+## 9. Transport-and-Separation Takeaways
 
 - **Momentum transport** determines the carrier-gas flow field and velocity boundary-layer development.
 - **Mass transport** determines how efficiently precursors move from the bulk gas to the substrate; diffusion and convection both matter.
@@ -394,7 +634,6 @@ $$
 - **Uniform film thickness** requires considering transport, precursor depletion, reaction kinetics, reactor configuration, and operating pressure **together**.
 
 *Model scope: These equations describe an idealized flat-plate, dilute-precursor CVD model. Actual CVD reactors can involve multicomponent diffusion, gas-phase reactions, thermal gradients, complex geometries, and non-first-order surface kinetics.*
-
 
 ---
 
