@@ -609,6 +609,8 @@ $$
 ---
 
 ## 8. Worked Example 4 — Convective Heat Transfer and Transport Similarity (ME 109, Lecture 10/09)
+<img width="740" height="669" alt="Screenshot 2026-10-29 at 12 06 35 PM" src="https://github.com/user-attachments/assets/dfc9b0be-073d-4440-9819-e8f33afa8b56" />
+
 
 > **Source:** ME 109, *Lecture 10/09: Convective Heat Transfer Equations*, Example 6.5 (p. 5). This is a **heat-transfer example**, not a CVD reaction problem. It illustrates nondimensional similarity and connects to gas-side mass transfer in CVD.
 
