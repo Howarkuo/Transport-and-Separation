@@ -606,7 +606,120 @@ $$
 
 ---
 
-## 8. Quick Equation Sheet
+---
+
+## 8. Worked Example 4 — Convective Heat Transfer and Transport Similarity (ME 109, Lecture 10/09)
+
+> **Source:** ME 109, *Lecture 10/09: Convective Heat Transfer Equations*, Example 6.5 (p. 5). This is a **heat-transfer example**, not a CVD reaction problem. It illustrates nondimensional similarity and connects to gas-side mass transfer in CVD.
+
+### Given: Turbine blade under hot gas flow
+
+| Quantity | Initial condition | SI units |
+| --- | ---: | --- |
+| Blade chord length, $L_1$ | $40\ \mathrm{mm}=0.040\ \mathrm{m}$ | m |
+| Free-stream speed, $U_{\infty,1}$ | $160$ | m/s |
+| Hot-gas temperature, $T_\infty$ | $1150$ | °C |
+| Blade surface temperature, $T_{s,1}$ | $800$ | °C |
+| Heat flux to blade, $q_1''$ | $95{,}000$ | W/m² |
+| Kinematic viscosity, $\nu$ (Part b) | $2.06\times10^{-4}$ | m²/s |
+
+For convection from hot gas to a cooler surface, Newton's law of cooling gives
+
+$$
+\boxed{q''=h(T_\infty-T_s)}
+$$
+
+where $h$ is the convective heat-transfer coefficient ($\mathrm{W\,m^{-2}\,K^{-1}}$). The Nusselt and Reynolds numbers are
+
+$$
+\boxed{Nu=\frac{hL}{k_f}},\qquad \boxed{Re_L=\frac{U_\infty L}{\nu}},
+$$
+
+where $k_f$ is the gas thermal conductivity ($\mathrm{W\,m^{-1}\,K^{-1}}$). For geometrically similar conditions and constant properties, the lecture models $Nu=f(Re,Pr)$; $Pr=\nu/\alpha$ is the Prandtl number.
+
+### (a) The surface cools from 800 °C to 700 °C: new heat flux?
+
+The free-stream conditions, blade length, and fluid properties are unchanged, so $Re_2=Re_1$, $Pr_2=Pr_1$, and $Nu_2=Nu_1$. Therefore, $h_2=h_1$.
+
+Find the original coefficient:
+
+$$
+\begin{aligned}
+h_1&=\frac{q_1''}{T_\infty-T_{s,1}}\\
+&=\frac{95{,}000}{1150-800}\\
+&\approx271.4\ \mathrm{W\,m^{-2}\,K^{-1}}.
+\end{aligned}
+$$
+
+The new heat flux is
+
+$$
+\begin{aligned}
+q_2''&=q_1''\frac{T_\infty-T_{s,2}}{T_\infty-T_{s,1}}\\
+&=95{,}000\frac{1150-700}{1150-800}\\
+&\approx\boxed{1.22\times10^5\ \mathrm{W/m^2}}.
+\end{aligned}
+$$
+
+**Physical meaning:** A cooler blade has a larger gas-to-surface temperature difference. With the convection coefficient unchanged, the heat flux **increases** to about $122{,}000\ \mathrm{W/m^2}$.
+
+### (b) Lower speed and longer chord: new heat flux?
+
+The proposed operating conditions are $U_{\infty,2}=80\ \mathrm{m/s}$ and $L_2=80\ \mathrm{mm}=0.080\ \mathrm{m}$. The lecture compares these with the **original 800 °C surface condition**, not the modified 700 °C surface in part (a).
+
+Calculate both Reynolds numbers:
+
+$$
+\begin{aligned}
+Re_1&=\frac{(160)(0.040)}{2.06\times10^{-4}}\approx31{,}068,\\
+Re_2&=\frac{(80)(0.080)}{2.06\times10^{-4}}\approx31{,}068.
+\end{aligned}
+$$
+
+Because $Re_2=Re_1$, the fluid properties and $Pr$ are unchanged, and the blade configurations are treated as similar, the lecture assumes $Nu_2=Nu_1$.
+
+Using $Nu=hL/k_f$ with unchanged $k_f$:
+
+$$
+\frac{h_2}{h_1}=\frac{L_1}{L_2}=\frac{0.040}{0.080}=\frac12.
+$$
+
+At the same $T_\infty$ and $T_s$ as the original case, this gives
+
+$$
+\begin{aligned}
+q_2''&=q_1''\frac{L_1}{L_2}\frac{T_\infty-T_{s,2}}{T_\infty-T_{s,1}}\\
+&=95{,}000\left(\frac{0.040}{0.080}\right)\left(\frac{1150-800}{1150-800}\right)\\
+&=\boxed{47{,}500\ \mathrm{W/m^2}}.
+\end{aligned}
+$$
+
+**Physical meaning:** Matching Reynolds number does **not** mean matching dimensional heat-transfer coefficient. Here $Nu$ is unchanged, but doubling $L$ halves $h$ and therefore halves heat flux at a fixed temperature difference.
+
+### Connection to CVD: Heat–mass transfer analogy
+
+Lecture 10/09 also introduces the mass-transfer counterpart of the Nusselt number:
+
+$$
+\boxed{Sh=\frac{h_mL}{D_{AB}}},\qquad
+\boxed{Sc=\frac{\nu}{D_{AB}}}
+$$
+
+where $Sh$ is the Sherwood number, $Sc$ is the Schmidt number, $h_m$ is the mass-transfer coefficient (m/s), and $D_{AB}$ is binary diffusivity (m²/s). Under analogous boundary-layer assumptions,
+
+$$
+\underbrace{Nu=f(Re,Pr)}_{\text{heat transfer}}
+\quad\longleftrightarrow\quad
+\underbrace{Sh=f(Re,Sc)}_{\text{mass transfer}}.
+$$
+
+For CVD the associated precursor delivery flux is $J_g=h_m(C_g-C_s)$, so **flow conditions affect both heat exchange and precursor delivery**. Similarity correlations must be chosen for the actual geometry, flow regime, and fluid properties; $Nu=Sh$ is not generally implied.
+
+**Study questions:** Why is the heat flux larger in (a) even though only the blade temperature changes? Why is $h_2=h_1/2$ in (b) despite equal Reynolds numbers? What replaces $Pr$ and $Nu$ in the analogous CVD species-transport calculation?
+
+---
+
+## 9. Quick Equation Sheet
 
 | Category | Equation | Use |
 | --- | --- | --- |
@@ -624,9 +737,12 @@ $$
 | Arrhenius relation | $k_s=k_0e^{-E_a/(RT_s)}$ | Temperature-dependent surface kinetics |
 | Standard Gibbs energy and equilibrium | $\Delta_rG^\circ=-RT\ln K$ | Calculate equilibrium from standard reaction Gibbs energy |
 | Reaction Gibbs energy | $\Delta_rG=\Delta_rG^\circ+RT\ln Q$ | Test thermodynamic favorability at actual activities |
+| Nusselt number | $Nu=hL/k_f$ | Convective heat-transfer similarity |
+| Sherwood number | $Sh=h_mL/D_{AB}$ | Convective mass-transfer similarity |
+| Prandtl and Schmidt numbers | $Pr=\nu/\alpha$, $Sc=\nu/D_{AB}$ | Compare thermal versus species diffusivity |
 | Arrhenius two-temperature ratio | $R_{\mathrm{dep}}(T_2)/R_{\mathrm{dep}}(T_1)=\exp[(E_a/k_B)(1/T_1-1/T_2)]$ | Reaction-controlled rate comparison using $E_a$ in eV |
 
-## 9. Transport-and-Separation Takeaways
+## 10. Transport-and-Separation Takeaways
 
 - **Momentum transport** determines the carrier-gas flow field and velocity boundary-layer development.
 - **Mass transport** determines how efficiently precursors move from the bulk gas to the substrate; diffusion and convection both matter.
@@ -634,6 +750,7 @@ $$
 - **Uniform film thickness** requires considering transport, precursor depletion, reaction kinetics, reactor configuration, and operating pressure **together**.
 
 *Model scope: These equations describe an idealized flat-plate, dilute-precursor CVD model. Actual CVD reactors can involve multicomponent diffusion, gas-phase reactions, thermal gradients, complex geometries, and non-first-order surface kinetics.*
+
 
 ---
 
