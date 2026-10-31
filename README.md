@@ -1,5 +1,23 @@
 # Chemical Engineering — Transport Phenomena, Fluid Mechanics & Separation Processes
 
+## Conservation Laws 
+- Material Derivative
+- Reynolds Transport Theorem
+- Divergence Theorem
+- Localization Theorem
+- Conservation of Mass (COM)
+- Balance of Linear Momentum (BLM)
+- Conservation of Energy (FLT)
+
+
+<img width="703" height="819" alt="Screenshot 2026-10-30 at 10 26 10 PM" src="https://github.com/user-attachments/assets/93c00060-a5ab-47a2-baf3-183ffca4dbb2" />
+<img width="694" height="635" alt="Screenshot 2026-10-30 at 10 26 22 PM" src="https://github.com/user-attachments/assets/969936ae-8cb8-4f98-9e1e-a3c88249a6de" />
+<img width="777" height="844" alt="Screenshot 2026-10-30 at 10 26 54 PM" src="https://github.com/user-attachments/assets/40a2d8f1-8127-497e-9642-c3dd37a607f1" />
+<img width="683" height="807" alt="Screenshot 2026-10-30 at 10 26 43 PM" src="https://github.com/user-attachments/assets/0ef557b0-c4fb-4a41-9473-dee3270f130c" />
+<img width="694" height="626" alt="Screenshot 2026-10-30 at 10 27 05 PM" src="https://github.com/user-attachments/assets/c5643e61-e1b1-4ccb-a6ba-7226d01f8b3a" />
+
+
+
 > Reference notes transcribed and formatted from the two supplied source documents. Equations and assumptions are retained as provided; they have not been independently verified.
 
 ## Contents
