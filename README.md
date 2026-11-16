@@ -42,7 +42,7 @@
 <img width="1944" height="990" alt="image" src="https://github.com/user-attachments/assets/fcc5a72b-b979-4931-8b14-74cb61bfcf3c" />
 
 
-# Transport and Separation — Chemical Vapor Deposition (CVD)
+# MATSCI 123  — Chemical Vapor Deposition (CVD)
 
 > **Application:** Semiconductor thin-film deposition  
 > **Core subjects:** Momentum transport, mass transport, interfacial reaction, and coupled transport–reaction  
