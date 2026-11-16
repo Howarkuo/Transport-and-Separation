@@ -1,5 +1,9 @@
 # Chemical Engineering — Transport Phenomena, Fluid Mechanics & Separation Processes
 
+## Textbooks 
+- Welty,	  Rorrer,	  and	  Foster,	  “Fundamentals	 of	 Heat,	  Mass,	  and	  Momentum	  Transfer,”	  6th ed.,	  John	  Wiley	  (2015).
+- Bird,	  Stewart,	  and	  Lightfoot,	  “Transport	  Phenomena,”	  2nd ed.	  John	  Wiley,	  NY	  (2002)
+
 ## Conservation Laws 
 - Material Derivative
 - Reynolds Transport Theorem
@@ -33,6 +37,10 @@
 - [Transport Phenomena](#transport-phenomena)
 - [Fluid Mechanics](#fluid-mechanics)
 - [Separation Processes](#separation-processes)
+
+# 150B PS4 P1: Drug Diffusion from cylindral pill
+<img width="1944" height="990" alt="image" src="https://github.com/user-attachments/assets/fcc5a72b-b979-4931-8b14-74cb61bfcf3c" />
+
 
 # Transport and Separation — Chemical Vapor Deposition (CVD)
 
