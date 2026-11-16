@@ -25,6 +25,7 @@
 - [Separation Processes](#separation-processes)
 
 # 150B PS4 P1: Drug Diffusion from cylindral pill
+<img width="1925" height="1120" alt="image" src="https://github.com/user-attachments/assets/c0bf373a-2aa5-4491-b34d-4f18420a81ef" />
 <img width="1944" height="990" alt="image" src="https://github.com/user-attachments/assets/fcc5a72b-b979-4931-8b14-74cb61bfcf3c" />
 <img width="1122" height="565" alt="image" src="https://github.com/user-attachments/assets/f3d766b0-9e89-4a4e-897e-bb06a4324839" />
 <img width="1376" height="768" alt="Gemini_Generated_Image_klupb2klupb2klup" src="https://github.com/user-attachments/assets/fa9c6b9f-2209-423c-8260-30193e94e742" />
